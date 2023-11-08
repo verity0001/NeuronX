@@ -53,17 +53,18 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: #52f0fe; 
+    background: transparent;
+    border-left: 1px rgb(65, 55, 55) solid;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #05ff01; 
+    background: #60ff5d;
   }
   
   /* Handle on hover */

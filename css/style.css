@@ -20,6 +20,7 @@ body {
     height: 100vh;
     background-size: 90% 90vh;
     background-repeat: no-repeat;
+    margin-left: 10%;
 }
 
 .first {
@@ -27,7 +28,6 @@ body {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    margin-left: 10%;
     flex-wrap: wrap;
 }
 
@@ -63,7 +63,9 @@ body {
 
 .button2 {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     padding: 30px 60px;
     border-radius: 4px;
     color: #05da00;
@@ -202,4 +204,27 @@ body {
 
 .img img {
   width: 65%;
+}
+
+.mtext {
+  margin-right: 70%;
+  color: white;
+}
+
+.mtext h1 {
+  background: #05DA00;
+  background: -webkit-linear-gradient(to right, #05DA00 0%, #52F0FE 10%);
+  background: -moz-linear-gradient(to right, #05DA00 0%, #52F0FE 10%);
+  background: linear-gradient(to right, #05DA00 0%, #52F0FE 10%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}  
+
+.mtext h2 {
+  font-size: 2vw;
+}
+
+.mtext h3 {
+  font-weight: 100;
 }
