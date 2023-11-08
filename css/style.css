@@ -191,7 +191,7 @@ body {
 
 .s2 {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
 }
 
 .img {
@@ -204,11 +204,12 @@ body {
 
 .img img {
   width: 65%;
+  border-radius: 30px;
 }
 
 .mtext {
-  margin-right: 70%;
   color: white;
+  width: 30%;
 }
 
 .mtext h1 {
@@ -227,4 +228,55 @@ body {
 
 .mtext h3 {
   font-weight: 100;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20%;
+}
+
+.img1 img{
+  width: 30vw;
+}
+.img1 {
+  margin-left: 10%;
+}
+
+.s3 {
+  width: 100%;
+  height: 100vh;
+}
+
+.s3 .container {
+  margin-left: 10%;
+  margin-right: 5vw;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.gallery .element {
+  width: 20vw;
+  height: 30vh;
+  background: rgba(82, 80, 80, 0.25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 30px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  color: white;
+}
+
+.gallery .element .img {
+  width: 2vw;
+  background-color: rgba(124, 58, 237, 0);
+  border-radius: 8px;
 }
