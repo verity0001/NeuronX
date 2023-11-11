@@ -218,6 +218,10 @@
 .mtext {
   color: white;
   width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .mtext h1 {
@@ -241,11 +245,12 @@
 .container2 {
   display: flex;
   flex-direction: row;
-  gap: 20%;
+  justify-content: center;
+  margin-right: 10%;
 }
 
 .img1 img{
-  width: 30vw;
+  width: 40vw;
   user-drag: none;
   -webkit-user-drag: none;
   user-select: none;
