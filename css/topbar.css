@@ -42,7 +42,7 @@ body {
 }
 
 .topbar a:hover {
-    color: #05da00;
+    color: #05da00 !important;
 }
 
 .topbar a img {
