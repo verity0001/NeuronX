@@ -2,7 +2,7 @@
 	::	█                                               █	::	
 	::	█       Name - NeuronFREE / Version - 0.3       █	::	
 	::	█            Coded by - FireImperator           █	::	
-	::	█                                               █	::	
+	::	█              THIS PROGRAM IS AS IS                                 █	::	
 	::	▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀	::
 
 @echo off
