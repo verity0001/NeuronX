@@ -225,13 +225,7 @@
 }
 
 .mtext h1 {
-  background: #05DA00;
-  background: -webkit-linear-gradient(to right, #05DA00 0%, #52F0FE 10%);
-  background: -moz-linear-gradient(to right, #05DA00 0%, #52F0FE 10%);
-  background: linear-gradient(to right, #05DA00 0%, #52F0FE 10%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
+  color: #05DA00;
 }  
 
 .mtext h2 {
