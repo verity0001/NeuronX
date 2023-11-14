@@ -1,0 +1,290 @@
+:root {
+    --dark-purple: #05da00;
+    --light-purple: #A084CA;
+    --lighter-purple: #BFACE0;
+    --light-pink: #EBC7E8;
+}
+
+@font-face {
+  font-family: productsans;
+  src: url(Productsans.ttf);
+}
+
+.s1{
+  margin-top: 100px;
+  max-width: 100vw;
+  width: 100vw;
+  height: calc(100vh - 100px);
+}
+
+.container {
+  width: 100vw;
+  height: 89vh;
+  background-size: 90% 90vh;
+  background-repeat: no-repeat;
+}
+
+.first {
+width: 100vw;
+height: 89vh;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.first .text {
+  margin-left: 10vw;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fff;
+  font-size: 1.25vw;
+  font-family: Uni Sans, sans-serif;
+  text-align: center;
+}
+
+.first .text h5 {
+margin: 0;
+font-weight: 100;
+}
+
+.first .text h1 {
+padding: 15px 0;
+margin: 0;
+font-weight: 900;
+}
+
+.img {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 60vw;
+}
+
+.img img {
+width: 40vw;
+border-radius: 30px;
+}
+
+.download {
+  text-decoration: none;
+  color: black;
+  margin-top: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.s2 {
+  width: 100vw;
+  max-width: 100%;
+  height: 80vh;
+}
+
+.mtext {
+  color: white;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mtext h1 {
+  color: #05DA00;  
+}  
+
+.mtext h2 {
+  font-size: 2vw;
+}
+
+.mtext h3 {
+  font-weight: 100;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+.img1 img{
+  width: 40vw;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-radius: 8px;
+}
+.img1 {
+  margin-left: 10%;
+}
+
+.s3 {
+  width: 100%;
+  height: 80vh;
+}
+
+.s3 .container {
+  margin-left: 10%;
+  margin-right: 5vw;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.gallery .element {
+  width: 20vw;
+  height: 30vh;
+  background: rgba(82, 80, 80, 0.25);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 30px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  color: white;
+  transition: all .3s;
+}
+
+.gallery .element:hover {
+  box-shadow: 0 8px 32px 0 rgba(59, 255, 56, 0.37);
+  scale: 1.1;
+}
+.gallery .element .img {
+  width: 2.5vw;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: rgba(124, 58, 237, 0);
+  border-radius: 11px;
+}
+
+.gallery .element h1, p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.gallery .element h1 {
+  font-family: Poppins,sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+  .topbar {
+    justify-content: center;
+    align-items: center;
+  }
+  .topbar .logo {
+    display: inline !important;
+    padding-left: 0 !important;
+    margin-right: 40px;
+  }
+  .topbar a {
+    display: none;
+  }
+  .topbar a img {
+    margin: 0 !important;
+  }
+  .first {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 30vh !important;
+  }
+  .container {
+    height: 30vh !important;
+  }
+  .s1 {
+    height: 700px !important;
+  }
+  .text {
+    margin: 0 !important;
+  }
+  .text h1 {
+    font-size: xx-large;
+    width: 100vw;
+  }
+  .text h5 {
+    font-size: large;
+    width: 90vw;
+  }
+  .img img {
+    margin-top: 10vh;
+    width: 100vw;
+    border-radius: 0;
+  }
+  a {
+    font-size: 4em;
+  }
+  .container2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img {
+    width: 100vw;
+  }
+  .img1 img {
+    width: 100vw;
+  }
+  .mtext h1 {
+    margin-left: 10vw;
+    width: 100vw;
+    text-align: center;
+    font-size: 12vw;
+  }
+  .mtext h2 {
+    width: 100vw;
+    text-align: center;
+    font-size: 7vw;
+    margin-left: 10vw;
+  }
+  .mtext h3 {
+    width: 100vw;
+    text-align: center;
+    font-size: 3vw;
+    margin-left: 10vw;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery .element {
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery .element .img {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 50px;
+    margin-right: 10vw;
+    margin-top: 0;
+    padding-top: 0;
+    top: 10px;
+    margin-bottom: 30px;
+  }
+  .s3 {
+    margin-top: 10vh;
+  }
+  footer {
+    display: none;
+  }
+}

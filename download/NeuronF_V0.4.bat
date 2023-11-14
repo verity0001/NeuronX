@@ -2,7 +2,8 @@
 	::	█                                               █	::	
 	::	█       Name - NeuronFREE / Version - 0.3       █	::	
 	::	█            Coded by - FireImperator           █	::	
-	::	█              THIS PROGRAM IS AS IS                                 █	::	
+	::	█           This Product is given AS IS         █	::
+	::	█                                               █	::	
 	::	▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀	::
 
 @echo off
