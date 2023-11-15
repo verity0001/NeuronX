@@ -1,0 +1,51 @@
+.s1 {
+    height: 80vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.s1 .about h1 {
+    letter-spacing: -1px;
+    font-size: 3rem;
+    font-weight: 800;
+    align-self: start;
+}
+
+.s1 .about {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: popup 1s;
+}
+
+.s1 .about p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.5;
+    margin-top: 1rem;
+
+}
+
+.s1 .aboutimg {
+    width: 40vw;
+    margin-left: 4vw;
+}
+.s1 .aboutimg img{
+    width: 40vw;
+    border-radius: 30px;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    visibility: hidden;
+    animation: popup 1s 0.5s forwards;
+}

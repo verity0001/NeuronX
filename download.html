@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Neuron X - Use your PC's entire power! / About</title>
+    <title>Neuron X - Use your PC's entire power! / Download</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/topbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/download.css">
+    <link rel="stylesheet" href="css/button.css">
     <link rel="icon" type="image/x-icon" href="img/NeuronX1.png">
 </head>
 <body>
@@ -15,5 +16,50 @@
         <a href="buy.html">BUY</a>
         <a href="about.html">ABOUT</a>
     </div>
+    <section class="s1">
+        <h1>Get the most out of your PC!</h1>
+        <p>Get better frames, less ping, faster windows, and much much more with Neuron X!</p>
+        <div class="card">
+            <div class="card-item">
+                <img src="img/app.png">
+            </div>
+        </div>
+        <script>const cards = document.querySelectorAll(".card");
+            for(let i=0; i<cards.length; i++){
+                cards[i].addEventListener('mousemove', rotate);
+                cards[i].addEventListener('mouseleave', clearRotate);
+            }
+            
+            function rotate(e){
+                const cardItem = this.querySelector(".card-item");
+                const force = 5;
+                const offsetY = -(e.offsetY - cardItem.offsetHeight/2)/force;
+                const offsetX = (e.offsetX - cardItem.offsetWidth/2)/force;
+                cardItem.style.transform = 'rotateX(' + offsetY + 'deg) rotateY(' + offsetX + 'deg)';
+            }
+            
+            function clearRotate(e){
+                if(e.target.classList.contains("card")){
+                    const cardItem = this.querySelector(".card-item");
+                    cardItem.style.transform = 'rotateX(0) rotateY(0)';
+                }
+            }</script>
+        <a href="download/NeuronF_V0.4.bat" download>
+            <div class="button2">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                DOWNLOAD
+            </div>
+    </section>
+    <footer>
+        <div class="context">
+            <a href="/"><img src="img/NeuronXD2.png"></a>
+            <h5>&copy; 2023 Neuron X. All Rights Reserved.</h5>
+            <div class="links"><a href="privacy.html">Privacy Policy</a>, <a href="terms.html">TOS</a></div>
+            <p>Website designed by: "<a href="https://wander.buyneuron.live">wqnder.</a>", programmed by: "<a href="https://verity.buyneuron.live">verity69</a>"</p>
+        </div>
+    </footer>
 </body>
 </html>

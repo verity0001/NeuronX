@@ -44,6 +44,7 @@ align-items: center;
   font-size: 1.25vw;
   font-family: Uni Sans, sans-serif;
   text-align: center;
+  animation: popup 1s;
 }
 
 .first .text h5 {
@@ -62,6 +63,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 60vw;
+visibility: hidden;
+animation: popup 1s 0.5s;
+animation-fill-mode: forwards;
 }
 
 .img img {
@@ -151,8 +155,8 @@ a {
   width: 20vw;
   height: 30vh;
   background: rgba(82, 80, 80, 0.25);
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
+  backdrop-filter: blur( 2px );
+  -webkit-backdrop-filter: blur( 2px );
   border-radius: 30px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   color: white;

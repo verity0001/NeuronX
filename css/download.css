@@ -1,0 +1,59 @@
+.s1 {
+    margin-top: 100px;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.s1 h1 {
+    color: white;
+    letter-spacing: -1px;
+    font-size: 2vw;
+    font-weight: 900;
+    animation: popup 1s;
+}
+
+.s1 p {
+    color: white;
+    font-size: 1vw;
+    font-weight: 500;
+    margin-top: 1vh;
+    animation: popup 1s;
+}
+
+.s1 img {
+    margin-top: 5vh;
+}
+
+.s1 a {
+    text-decoration: none;
+}
+
+*, *:before, *:after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.card{
+    height: fit-content;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.card-item{
+	transition: transform .2s;
+}
+
+.card-item > img{
+    visibility: hidden;
+    animation: popup 1s 0.5s forwards;
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+    border-radius: 8px;
+}

@@ -17,6 +17,24 @@ body {
     box-sizing: border-box;
 }
 
+@keyframes popup {
+    0% {
+      transform: translateY(200px);
+      visibility: hidden;
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+.animate-popup {
+  animation: popup 1s forwards;
+  opacity: 0;
+}
+
 ::selection {
     background-color: black;
     color: #4dff4a;
@@ -58,6 +76,12 @@ body {
     width: 200px;
     height: 80px;
     margin: 5px;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 /* width */
@@ -93,9 +117,6 @@ footer {
     justify-content: center;
     align-items: center;
     color: white;
-    left: 0;
-    top: 250vh;
-    position: absolute;
 }
 
 .context {
@@ -105,9 +126,15 @@ footer {
     flex-direction: column;
 }
 .context img {
-    width: 10vw;
-    display: flex;
-    flex-direction: column;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .context h5 {
