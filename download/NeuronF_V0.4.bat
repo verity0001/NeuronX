@@ -1,9 +1,8 @@
 	::	▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄	::	
 	::	█                                               █	::	
-	::	█       Name - NeuronFREE / Version - 0.4       █	::	
+	::	█       Name - NeuronFREE / Version - 0.3       █	::	
 	::	█            Coded by - FireImperator           █	::	
 	::	█           This Product is given AS IS         █	::
-	::	█                  WINDOWS OPTIMIZER            █	::	
 	::	█                                               █	::	
 	::	▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀	::
 
