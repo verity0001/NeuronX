@@ -223,6 +223,7 @@ echo msgbox "%msgboxBody%",0,"%msgboxTitle%">"%tmpmsgbox%"
 WSCRIPT "%tmpmsgbox%"
 pause > nul
 cls
+:DisclaimerCheck
 reg query "HKCU\Software\Neuron" /v "Disclaimer" >nul 2>&1
 if %errorlevel% equ 0 (
 	goto menu 
@@ -256,7 +257,7 @@ echo.
 SET INPUT=
 set /p "INPUT=[30m.                                         [92m>[97m: [97m"
 
-if /i "%INPUT%" neq "I understand" goto Disclaimer
+if /i "%INPUT%" == "I understand" goto DisclaimerCheck
 Reg.exe add "HKCU\Software\Neuron" /v "Disclaimer" /f >nul 2>&1
 
 
