@@ -1,8 +1,7 @@
 	::	▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄	::	
 	::	█                                               █	::	
-	::	█       Name - NeuronFREE / Version - 0.3       █	::	
+	::	█      Name - NeuronFREE / Version - 0.4.1      █	::	
 	::	█            Coded by - FireImperator           █	::	
-	::	█           This Product is given AS IS         █	::
 	::	█                                               █	::	
 	::	▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀	::
 
@@ -224,7 +223,44 @@ echo msgbox "%msgboxBody%",0,"%msgboxTitle%">"%tmpmsgbox%"
 WSCRIPT "%tmpmsgbox%"
 pause > nul
 cls
-goto menu
+reg query "HKCU\Software\Neuron" /v "Disclaimer" >nul 2>&1
+if %errorlevel% equ 0 (
+	goto menu 
+) else (
+	goto Disclaimer
+
+)
+:Disclaimer
+cls
+echo. %tcol%
+echo.                        _   _                                 
+echo.                       ^| \ ^| ^|  ___  _   _  _ __  ___   _ __  
+echo.                       ^|  \^| ^| / _ \^| ^| ^| ^|^| '__^|/ _ \ ^| '_ \ 
+echo.                       ^| ^|\  ^|^|  __/^| ^|_^| ^|^| ^|  ^| (_) ^|^| ^| ^| ^|
+echo.                       ^|_^| \_^| \___^| \__,_^|^|_^|   \___/ ^|_^| ^|_^|
+echo. [97m
+echo. 
+echo.
+echo.    This product is provided 'AS IS' without any warranties or guarantees. 
+echo.
+echo.    By using this software, you acknowledge and accept that any risks associated 
+echo.    with its use are solely your responsibility. We are not liable for 
+echo.    any damages or losses resulting from the use of this product.
+echo.
+echo.
+echo.
+echo.                            type "[92mI understand[97m" to proceed
+echo.
+echo.
+echo.
+SET INPUT=
+set /p "INPUT=[30m.                                         [92m>[97m: [97m"
+
+if /i "%INPUT%" neq "I understand" goto Disclaimer
+Reg.exe add "HKCU\Software\Neuron" /v "Disclaimer" /f >nul 2>&1
+
+
+goto Disclaimer
 
 
 
