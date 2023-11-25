@@ -49,3 +49,23 @@
     visibility: hidden;
     animation: popup 1s 0.5s forwards;
 }
+
+@media screen and (max-width: 700px) {
+    .s1 {
+        flex-direction: column;
+        height: 100vh;
+    }
+    .s1 .about {
+        width: 80%;
+        margin-top: 110px;
+    }
+    .s1 .aboutimg {
+        width: 100vw;
+        margin-left: 0;
+    }
+    .s1 .aboutimg img {
+        margin-top: 50px;
+        border-radius: 0px;
+        width: 100vw !important;
+    }
+}

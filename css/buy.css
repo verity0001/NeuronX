@@ -51,3 +51,32 @@
     margin-right: 4vw;
     animation: popup 1s 1s ease-in-out forwards;
 }
+
+@media screen and (max-width: 700px) {
+    .s1 {
+        height: 700px !important;
+    }
+
+    .gallery {
+        flex-direction: column;
+        height: 100%;
+        margin-top: 40px;
+        gap: 2vh;
+    }
+
+    .element {
+        width: 100vw;
+        height: 30vh;
+        padding: 20px;
+    }
+
+    .element:first-of-type {
+        margin-top: 110px;
+        margin-left: 0;
+    }
+
+    .element:last-of-type {
+        width: 100vw !important;
+        margin-right: 0;
+    }
+}
