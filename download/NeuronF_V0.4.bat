@@ -257,8 +257,7 @@ echo.
 SET INPUT=
 set /p "INPUT=[30m.                                         [92m>[97m: [97m"
 
-if /i "%INPUT%" == "I understand" goto DisclaimerCheck
-Reg.exe add "HKCU\Software\Neuron" /v "Disclaimer" /f >nul 2>&1
+if /i "%INPUT%" == "I understand" Reg.exe add "HKCU\Software\Neuron" /v "Disclaimer" /f >nul 2>&1 && goto DisclaimerCheck
 
 
 goto Disclaimer
