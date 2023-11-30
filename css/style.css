@@ -246,6 +246,13 @@ a:-webkit-any-link {
   .context {
     text-align: center;
   }
+  .side a {
+    font-size: 4em;
+    text-decoration: none;
+  }
+  footer {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 300px) {

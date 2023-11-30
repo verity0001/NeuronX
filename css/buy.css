@@ -37,7 +37,7 @@
 }
 
 .element:hover {
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 40, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(31, 135, 40, 0.5);
     cursor: help;
 }
 
@@ -50,6 +50,14 @@
     width: 40vw !important;
     margin-right: 4vw;
     animation: popup 1s 1s ease-in-out forwards;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li:before {
+    content: "\2713\0020";
 }
 
 @media screen and (max-width: 700px) {

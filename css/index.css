@@ -221,9 +221,6 @@ a {
     width: 100vw;
     border-radius: 0;
   }
-  a {
-    font-size: 4em;
-  }
   .container2 {
     flex-direction: column;
     justify-content: center;
