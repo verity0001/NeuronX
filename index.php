@@ -1,3 +1,25 @@
+<?php
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $directory = $_SERVER['REQUEST_URI'];
+    $date = date("d-m-Y | H:i:s");
+    $location_api_url = "https://ipinfo.io/$ip/json";
+    $location_json = file_get_contents($location_api_url);
+    $location_array = json_decode($location_json, true);
+    $city = $location_array['city'];
+    $region = $location_array['region'];
+    $country = $location_array['country'];
+    $servername = "neuron-db-do-user-14768888-0.c.db.ondigitalocean.com";
+    $username = "doadmin";
+    $password = "AVNS_C8h3nbxLl8VovZeJVHa";
+    $conn = new mysqli($servername, $username, $password);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "INSERT INTO addresses (ad_id, address, city, region, country) VALUES (NULL, ".$ip.", ".$city.", ".$region.", ".$country.");";
+    $conn->query($sql);
+    $conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
