@@ -27,7 +27,7 @@
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     text-align: center;
-    transition: box-shadow .4s;
+    transition: box-shadow .2s;
     opacity: 0;
     animation: popup 1s 0.5s ease-in-out forwards;
 }
@@ -37,8 +37,7 @@
 }
 
 .element:hover {
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 40, 0.5);
-    cursor: help;
+    box-shadow: 0 16px 64px 0 rgba(31, 135, 40, 0.5);
 }
 
 .element:first-of-type {

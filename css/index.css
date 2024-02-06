@@ -63,14 +63,14 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 60vw;
-visibility: hidden;
-animation: popup 1s 0.5s;
-animation-fill-mode: forwards;
 }
 
 .img img {
 width: 40vw;
 border-radius: 30px;
+visibility: hidden;
+animation: popup 1s 0.5s;
+animation-fill-mode: forwards;
 }
 
 .download {
@@ -153,15 +153,13 @@ a {
 
 .gallery .element {
   width: 20vw;
-  height: fit-content;
+  height: 25vh;
   font-size: 1rem;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px !important;
   padding-bottom: 30px;
   background: rgba(82, 80, 80, 0.25);
-  backdrop-filter: blur( 2px );
-  -webkit-backdrop-filter: blur( 2px );
   border-radius: 30px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   color: white;
@@ -252,6 +250,9 @@ a {
   }
   ::-webkit-scrollbar {
     display: none;
+  }
+  .gallery .element:first-of-type {
+    margin-top: 10vh;
   }
   .gallery .element {
     width: 100vw;
