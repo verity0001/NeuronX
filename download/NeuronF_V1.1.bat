@@ -41,6 +41,7 @@ timeout 2 > nul
 :: Ask for admin
 dism>nul||if exist "%~dp0MinSudo.exe" (MinSudo -NoLogo -TrustedInstaller -Privileged "%~f0" && exit) else ^
 cd "%tmp%"&&echo CreateObject^("Shell.Application"^).ShellExecute"%~nx0",,"%~dp0","runas">tmp.vbs&&tmp&&del tmp.vbs&&exit
+goto admin
 :DisclaimerCheck
 Reg.exe query "HKCU\Software\Neuron" /v "Disclaimer" > nul 2>&1
 if %errorlevel% equ 0 (
