@@ -1,0 +1,20 @@
+.margin {
+    height: 20vh;
+}
+
+h1, h2, p, h3 { 
+    color: white;
+}
+.privacy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    gap: 2vw;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}

@@ -41,7 +41,6 @@ timeout 2 > nul
 :: Ask for admin
 dism>nul||if exist "%~dp0MinSudo.exe" (MinSudo -NoLogo -TrustedInstaller -Privileged "%~f0" && exit) else ^
 cd "%tmp%"&&echo CreateObject^("Shell.Application"^).ShellExecute"%~nx0",,"%~dp0","runas">tmp.vbs&&tmp&&del tmp.vbs&&exit
-goto admin
 :DisclaimerCheck
 Reg.exe query "HKCU\Software\Neuron" /v "Disclaimer" > nul 2>&1
 if %errorlevel% equ 0 (
@@ -204,10 +203,10 @@ echo.
 SET INPUT=
 set /p "INPUT=%COL%[30m.                                            %COL%[92m>%COL%[97m: %COL%[97m"
 
-IF /I '%INPUT%'=='1' set state9=%COL%[92m&& goto powerthrottling 
+IF /I '%INPUT%'=='1' set state9=%COL%[92m&& goto powerplan 
 IF /I '%INPUT%'=='2' set state10=%COL%[92m&& goto cleaner
 IF /I '%INPUT%'=='3' set state11=%COL%[92m&& goto kbmousetweaks
-IF /I '%INPUT%'=='4' goto windowsmenu3
+IF /I '%INPUT%'=='4' set state12=%COL%[92m&& goto powerthrottling
 IF /I '%INPUT%'=='b' goto windowsmenu2
 IF /I '%INPUT%'=='n' goto windowsmenu3
 IF /I '%INPUT%'=='sex' start https://www.youtube.com/@FireAXT
@@ -869,7 +868,7 @@ Reg.exe add "HKCU\Control Panel\Accessibility\MouseKeys" /v "Flags" /t REG_DWORD
 Reg.exe add "HKCU\Control Panel\Accessibility\StickyKeys" /v "Flags" /t REG_DWORD /d "0" /f > nul 2>&1
 goto done2
 
-:powerthrottling
+:powerplan
 call :applyingtweakscreen
 powercfg -restoredefaultschemes
 powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa > nul 2>&1
@@ -904,6 +903,16 @@ powercfg -setacvalueindex scheme_current SUB_INTSTEER MODE 6 > nul 2>&1
 )
 :: Changing power plan name
 powercfg -changename scheme_current "NeuronV1" "For NeuronF tweaker - https://dsc.gg/neuronx - made by NeuronX " > nul 2>&1
+goto done2
+
+:powerthrottling
+call :applyingtweakscreen
+Reg.exe add "HKLM\System\CurrentControlSet\Control\Session Manager" /v "CoalescingTimerInterval" /t REG_DWORD /d "0" /f > nul 2>&1
+Reg.exe add "HKLM\System\CurrentControlSet\Control\Session Manager\Power" /v "CoalescingTimerInterval" /t REG_DWORD /d "0" /f > nul 2>&1
+Reg.exe add "HKLM\System\CurrentControlSet\Control\Session Manager\Memory Management" /v "CoalescingTimerInterval" /t REG_DWORD /d "0" /f > nul 2>&1
+Reg.exe add "HKLM\System\CurrentControlSet\Control\Session Manager\kernel" /v "CoalescingTimerInterval" /t REG_DWORD /d "0" /f > nul 2>&1
+Reg.exe add "HKLM\System\CurrentControlSet\Control\Session Manager\Executive" /v "CoalescingTimerInterval" /t REG_DWORD /d "0" /f > nul 2>&1
+Reg.exe add "HKLM\System\CurrentControlSet\Control\Power\ModernSleep" /v "CoalescingTimerInterval" /t REG_DWORD /d "0" /f > nul 2>&1
 Reg.exe add "HKLM\System\CurrentControlSet\Control\Power" /v "CoalescingTimerInterval" /t REG_DWORD /d "0" /f > nul 2>&1
 Reg.exe add "HKLM\System\CurrentControlSet\Control\Power" /v "PlatformAoAcOverride" /t REG_DWORD /d "0" /f > nul 2>&1
 Reg.exe add "HKLM\System\CurrentControlSet\Control\Power" /v "EnergyEstimationEnabled" /t REG_DWORD /d "0" /f > nul 2>&1
