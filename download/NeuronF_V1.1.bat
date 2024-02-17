@@ -38,19 +38,16 @@ echo.
 echo.
 timeout 2 > nul
 :: Ask for admin
-dism>nul||if exist "%~dp0MinSudo.exe" (MinSudo -NoLogo -TrustedInstaller -Privileged "%~f0" && exit) else ^
-cd "%tmp%"&&echo CreateObject^("Shell.Application"^).ShellExecute"%~nx0",,"%~dp0","runas">tmp.vbs&&tmp&&del tmp.vbs&&exit
-goto admin
+start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b
 :DisclaimerCheck
 Reg.exe query "HKCU\Software\Neuron" /v "Disclaimer" > nul 2>&1
 if %errorlevel% equ 0 (
-goto start 
+goto startprogram 
 ) else (
 goto Disclaimer
-
 )
 
-:start
+:startprogram
 set state1=%COL%[91m
 set state2=%COL%[91m
 set state3=%COL%[91m
@@ -66,7 +63,6 @@ set state12=%COL%[91m
 rmdir %SystemDrive%\Windows\system32\adminrightstest > nul 2>&1
 mkdir %SystemDrive%\Windows\system32\adminrightstest > nul 2>&1
 set THREADS=%NUMBER_OF_PROCESSORS%
-Reg.exe add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v "SystemRestorePointCreationFrequency" /t REG_DWORD /d "0" /f > nul 2>&1
 if %errorlevel% equ 0 if not exist "%SystemDrive%\Registrybackup.reg" (
 :check_reg_backup
 call :menutop
@@ -94,11 +90,11 @@ echo.
 echo.                     [%COL%[92m 1 %COL%[97m] System %COL%[97mTweaks               Network Tweaks [%COL%[92m 2 %COL%[97m]
 echo.
 echo.
-echo.
 echo.                                             %COL%[97m[%COL%[92m R %COL%[97m]
 echo.
 echo.                                  %COL%[97mCREATE SYSTEM RESTORE POINT
 echo.
+echo.                     %COL%[31;4mWITHOUT A SYSTEM RESTORE POINT YOU CAN'T REVERT CHANGES%COL%[0m
 echo.
 echo. %COL%[97m
 echo.                            For more optimizations go to our discord
@@ -106,7 +102,6 @@ echo. %COL%[97m
 SET INPUT=
 set /p "INPUT=%COL%[30m.                                             %COL%[92m>%COL%[97m: %COL%[97m"
 IF /I '%INPUT%'=='1' goto windowsmenu
-
 IF /I '%INPUT%'=='2' goto networkmenu
 IF /I '%INPUT%'=='3' start https://buyneuron.live/buy.html && start https://dsc.gg/neuronx
 IF /I '%INPUT%'=='r' goto restorepoint
@@ -114,9 +109,10 @@ goto menu
 
 :restorepoint
 chcp 852 > nul 2>&1
-powershell -ExecutionPolicy Unrestricted -NoProfile Enable-ComputerRestore -Drive 'C:\', 'D:\', 'E:\', 'F:\', 'G:\' > nul 2>&1
-powershell -ExecutionPolicy Unrestricted -NoProfile Checkpoint-Computer -Description 'Before Neuron optimization'
-wmic /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "Before Neuron Optimization", 100, 12
+echo Creating System Restore Point [...] 
+Reg.exe add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v "SystemRestorePointCreationFrequency" /t REG_DWORD /d "0" /f > nul 2>&1
+powershell -ExecutionPolicy Bypass -Command "Checkpoint-Computer -Description 'Before Neuron optimization' -RestorePointType 'MODIFY_SETTINGS'"
+if %errorlevel% neq 0 cls & echo Failed to create a restore point! & echo. & echo Press any key to continue anyway & pause >nul
 chcp 65001 > nul 2>&1
 goto menu
 
@@ -970,7 +966,7 @@ echo.
 SET INPUT=
 set /p "INPUT=%COL%[30m.                                        %COL%[92m>%COL%[97m: %COL%[97m"
 
-if /i "%INPUT%" == "I understand" Reg.exe add "HKCU\Software\Neuron" /v "Disclaimer" /f > nul 2>&1 && goto DisclaimerCheck
+if /i "%INPUT%" == "I understand" Reg.exe add "HKCU\Software\Neuron" /v "Disclaimer" /f > nul 2>&1
 goto DisclaimerCheck
 
 
